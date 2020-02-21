@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/register.css">
+</head>
+<body>
+    <div class="register">
+        <div class="logo"><img src="images/logo.png" alt=""></div>
+        <h1>欢迎访问LOGO登录官网</h1>
+        <div class="form">
+            <div class="form-data">
+                <div class="row"><input type="text" name="username" placeholder="账号"></div>
+                <div class="row"><input type="password" name="password" placeholder="密码"></div>
+            </div>
+            <button>登录</button>
+        </div>
+        <a href="register.html" target="_self">没有账号，注册一下</a>
+    </div>
+    <script src="js/ajax.js"></script>
+    <script>
+        let form_data = document.querySelectorAll('.form-data .row input')
+        let btn = document.querySelector('.form button')
+        btn.onclick=function(){
+            let formData =""
+            for(var data of form_data){
+                formData+=`${data.name}=${data.value}&`
+            } 
+            formData=formData.slice(0,-1)
+            let method = 'post'
+            let url= '/api/user/login'
+            ajax(formData,method,url,function(result){
+                if(result){
+                    window.sessionStorage.setItem("username",result.username)
+                    localStorage.removeItem('123')
+                    window.open('index.html',"_self")
+                }else{
+                    alert("登录失败")
+                }
+            })
+        } 
+    </script>
+</body>
+</html>

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>购物车</title>
+    <script src="https://cdn.bootcss.com/jquery/3.4.1/jquery.min.js"></script>
+    <script src="js/header.js"></script>
+    <script src="js/footer.js"></script>
+    <link rel="stylesheet" href="css/cart.css">
+    <link rel="stylesheet" href="css/checkout.css">
+    <script src="js/checkout.js"></script>
+</head>
+<body>
+    <!-- 收货地址遮罩 -->
+<div class="info-cover"></div>
+   <div id="header"></div>
+   <div class="content content-cart">
+    <div class="info">
+        <h1 class="cart-title">收货信息</h1>
+        <div class="order-info" id="block">
+            <!-- <div class="order-info-item">
+                
+            </div> -->
+            <div class="order-address">
+                收货地址
+            </div>
+        </div>
+    </div>
+    <!-- 收货地址 -->
+    <div class="info-address">
+        <h4 class="info-title">收货地址</h4>
+        <div class="info-list">
+            <input type="text" class="name" placeholder="收货人姓名">
+            <input type="text" class="phone" placeholder="手机号码">
+            <input type="text" class="address" placeholder="收货地址">
+            <div class="check"><label for="" class="defaults"></label>设置为默认</div>
+            <input type="button" value="保存" class="info-keep">
+        </div>
+        <span class="address-close">&times;</span>
+    </div>
+    <h1 class="cart-title">购物清单</h1>
+    <div class="cart" id="block">
+        <div class="cart-nav">
+            <span>商品信息</span>
+            <span>单价</span>
+            <span>数量</span>
+            <span>小计</span>
+        </div>
+        <div class="cart-items">
+            
+        </div>
+        <!-- 总计购物 -->
+        <div class="cart-shop">
+            <div id="count" class="cart-total">
+                <div class="sums"></div>
+                <button class="balance">提交清单</button>
+            </div>
+        </div>
+    </div>
+   </div>
+   <div id="footer"></div>
+</body>
+</html>

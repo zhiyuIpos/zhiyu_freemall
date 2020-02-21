@@ -1,0 +1,72 @@
+*{
+    margin:0;
+    padding:0;
+    outline: none;
+}
+body{
+    background: #ededed;
+}
+.register{
+    width: 33%;
+    margin:200px auto;
+    text-align: center;
+    background-color:rgba(255,255,255,.5);
+    border:1px solid #eee;
+    padding: 50px 0;
+    border-radius: .8rem;
+}
+
+
+.register .row{
+    margin:20px 0;
+    position: relative;
+}
+.register .row label{
+    line-height: 2.5rem;
+    position: absolute;
+    font-size: .6rem;
+    display: none;
+}
+
+.register .row label.success{
+    padding-left: 1rem;
+    background:url(../images/yes.png) no-repeat left center;
+    color:#12a861;
+    width:0px;height:2.5rem;
+    overflow: hidden;
+}
+
+.register .row label.pass{
+    padding-left: 1rem;
+    background:url(../images/no.png) no-repeat left ;
+    color:#d81e06;
+}
+
+.register .row input{
+    height: 2.5rem;
+    width: 15rem;
+    box-sizing:border-box;
+    padding-left: 10px;
+    border:1px solid #eee;
+    border-radius: .3rem;
+}
+
+.register .row input[type="checkbox"]{
+    width: 1.2rem;
+    height: 1.2rem;
+    vertical-align: middle;
+    margin-top: -.3rem;
+}
+
+.register .row:nth-child(4){
+    font-size: .8rem;
+}
+
+.register button{
+    width: 13rem;
+    height: 2rem;
+    cursor:pointer;
+    background: #ececec;
+    border:1px solid #eee;
+    border-radius: .3rem;
+}

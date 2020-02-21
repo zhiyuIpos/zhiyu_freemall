@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>购物车</title>
+    <script src="https://cdn.bootcss.com/jquery/3.4.1/jquery.min.js"></script>
+    <script src="js/header.js"></script>
+    <script src="js/footer.js"></script>
+    <link rel="stylesheet" href="css/cart.css">
+    <script src="js/cart.js"></script>
+</head>
+<body>
+   <div id="header"></div>
+   <div class="content content-cart">
+    <h1 class="cart-title">购物清单</h1>
+    <div class="cart" id="block">
+        <div class="cart-nav">
+            <span>商品信息</span>
+            <span>单价</span>
+            <span>数量</span>
+            <span>小计</span>
+            <span>操作</span>
+        </div>
+        <div class="cart-items">
+           
+        </div>
+        <div class="cart-shop">
+            <div class="shop-all">
+                <label class="all"></label>全选
+                <span class="del-choose">删除选中的商品</span>
+            </div>
+            <div id="count" class="cart-total">
+                <div class="cart-num">
+                    <p>已选择<label data-sum="sum" class="total-choose"></label>件商品</p>
+                    <p>共<label class="total total-text">1</label>件商品</p>
+                </div>
+                <div class="sums"></div>
+                <button class="balance">现在结算</button>
+            </div>
+        </div>
+        <div class="block">
+            <h1>空空如也</h1>
+        </div>
+    </div>
+   </div>
+   <div id="footer"></div>
+</body>
+</html>

@@ -1,0 +1,369 @@
+*{
+    margin:0;
+    padding:0;
+    list-style:none;
+    text-decoration:none;
+    color: black;
+    outline: none;
+}
+body {
+    background-color:#ededed;
+    font: 1rem "Lucida Grande", Helvetica, Arial, sans-serif;
+    min-width: 1200px;
+}
+
+input::-webkit-input-placeholder{
+    color:#bfbfbf;
+}
+
+.wrap{
+    width: 75rem;
+    margin:0 auto;
+}
+
+/* header */
+.header{
+    background: #f7f7f7;
+    box-shadow:0 0 1px 0 rgba(33,33,33,.3);
+}
+
+.header-top{
+    width:100%;
+    height: 5rem;
+    background:black;
+}
+.header-nav{
+    
+    width: 100%;
+    background-color: white;
+}
+
+/* header */
+.header-top:before{
+    display: table;
+    content:"";
+}
+.top{
+    display: flex;
+    height: 80px;
+    justify-content:space-between;
+    align-items: center;
+}
+
+
+.header-top .nav{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header-top .search{
+    display: flex;
+    width: 260px;
+    height: 36px;
+    border:1px solid #eee;
+    border-radius:3px;
+    overflow: hidden;
+    background-color: white;
+    box-sizing:border-box;
+    padding-left: 20px;
+    margin-left: 500px;
+}
+
+.header-top .search>input{
+    border:none;
+    width: 200px;
+}
+.header-top .search>button{
+    width: 40px;
+    border:none;
+    background:url(../images/Search.png) no-repeat 14px center;
+    cursor:pointer;
+}
+.nav{
+    margin-top: 0;
+    top:0;   
+}
+.nav-down{
+    position: fixed;
+    top: 1rem;
+    margin-left: 68rem; 
+    z-index: 3;
+    transition: top .3s linear;
+}
+
+.nav .pr{
+    position: relative;
+}
+
+.nav .pr:first-child{
+    margin-right: 2rem;
+}
+
+.nav .icon{
+    font-size: 1.5rem;
+    color: #9a9a9a;
+}
+
+.nav .icon:hover{
+    color:#bfbfbf;
+}
+
+/* box-user */
+.nav .box{
+    position: absolute;
+    top: 1.5rem;
+    left: -68px;
+    z-index: 2; 
+    padding-top: 10px;   
+}
+
+.hide{
+    display: none;
+}
+
+.nav .pr:hover .icon+.hide{
+    display: block;
+}
+
+.nav .box-triangle{
+    width: 0;
+    height: 0;
+    border:8px solid ;
+    border-top: none;
+    margin:0 auto;
+    border-color:transparent transparent white;
+}
+
+.nav .box .user{
+    width: 10rem;
+    box-sizing: border-box;
+    font-size: .8rem;
+    border-radius:.5rem;
+    background-color:#fff;
+    overflow: hidden;
+}
+.nav .box .user .user-img{
+    width: 3rem;
+    display: block;
+    height: 3rem;
+    border:1px solid #eee;
+    border-radius: 50%;
+    margin:20px auto 10px;
+    overflow: hidden;
+}
+.nav .box .user .user-img>img{
+    width: 100%;
+    height: 100%;
+}
+
+.nav .box .user>h6{
+    font-weight: normal;
+    text-align: center;
+    padding-bottom: 20px;
+}
+
+.nav .box .user>ul>li{
+    width: 100%;
+    background: white;
+    border-top: 1px solid #f5f5f5;
+}
+
+.nav .box .user>ul>li>a{
+    padding:.8rem 0;
+    text-align: center;
+    display: inline-block;
+    width: 100%;
+    height: 100%;
+    color: #616161;
+}
+
+
+/* box - car */
+.nav .count{
+    display: inline-block;
+    width: 1.3rem;
+    height: 1.3rem;
+    font-size: .5rem;
+    border-radius: 50%;
+    color:white;
+    background: #9a9a9a;
+    line-height: 1.3rem;
+    text-align: center;
+    vertical-align: middle;
+    margin-top: -.3rem;
+    margin-left: .5rem;
+    cursor:pointer;
+} 
+.nav .red{
+    background-image: linear-gradient(to top , #d44d44,red);
+}
+.nav .count>label{
+    color:white;
+}
+.nav .count .car{
+    left: -21.6rem;
+    height: 100px;
+    width: 25rem;
+    display: none;
+}
+
+.nav .icon:hover .car{
+    display: block;
+}
+
+.nav .count .car .box-triangle{
+    position: relative;
+    right: -160px;
+}
+
+.nav .count .car .cars{
+    width: 100%;
+    min-height: 20rem;
+    background-color: white;
+    border-radius: .5rem;
+    box-sizing: border-box;
+    color: #333;
+    font-size: 1rem;
+    background:url(../images/empty_car.png) no-repeat center center #fff;
+    background-size: 8rem 8rem;
+}
+
+.nav .count .car .cars>.car-total{
+    display: none;
+}
+
+.nav .count .car .cars::before{
+    padding-top: 5rem;
+    display: inline-block;
+    content:'您的购物车竟然是空的!';
+}
+.nav .count .car .car-go{
+    background:#fff;
+    min-height: 0rem;
+}
+
+.nav .count .car .car-go::before{
+    content:"";
+    display: none;
+    padding-top: 0rem;
+}
+.nav .count .car .car-go .car-list{
+    display: flex;
+    padding:20px;
+    border-bottom: 1px solid #eee;
+}
+.nav .count .car .car-go .car-list .car-list-img{
+    width: 5rem;
+    height: 5rem;
+}
+.nav .count .car .car-go .car-list .car-list-img>img{
+    width: 100%;
+    height: 100%;
+    box-sizing: border-box;
+    border:1px solid #eee;
+}
+.nav .count .car .car-go .car-list .car-list-content{
+    color: #678ee7;
+    padding:10px 0;
+    margin-left: 3rem;
+}
+
+.car-list-content>p{
+    color: #678ee7;
+    width:11rem;
+    padding-bottom: 1rem;
+    white-space: nowrap;  
+    overflow: hidden;  
+    text-overflow: ellipsis;
+}
+.car-list-content>div{
+    float: left;
+}
+
+.car-list-content>div .price{
+    color: #d44d44;
+}
+.car-list-content>div .counts{
+    color: #bfbfbf;
+    font-size: .8rem;
+}
+.car-list-content>div .counts::before{
+    content:'×';
+    color: #bfbfbf;
+    padding: 0 .5rem 0 2rem;
+}
+
+.car .car-go .car-list>span{
+    display: none;
+    width: 1.3rem;
+    height: 1.3rem;
+    border-radius: 50%;
+    border:1px solid #eee;
+    margin-top: 2rem;
+    text-align: center;
+    color: #bfbfbf;
+    margin-left: 2rem;
+}
+.car .car-go .car-list:hover span{
+    display: inline-block;
+}
+
+.nav .count .car .car-go>.car-total{
+    height: 2.5rem;
+    padding:20px;
+    display: flex;
+    justify-content: space-between;
+    box-shadow: inset 0 -1px 0 hsla(0,0%,100%,.5), 0 -3px 8px rgba(0,0,0,.04);
+    background: linear-gradient(#fafafa,#f5f5f5);
+    border-radius: 0 0 .4rem .4rem;
+}
+
+.car .car-go .car-total .car-totals>p{
+    color:#9a9a9a;
+    font-size: .8rem;
+    padding-bottom: .2rem;
+    text-align: left;
+}
+.car .car-go .car-total .car-totals>h5{
+    color: #d44d44;
+    font-size: 1.05rem;
+}
+.car .car-go .car-total .car-totals>h5::before{
+    content:'合计:';
+    color: #6f6f6f;
+    font-size: .8rem;
+    padding-right: 1rem;
+}
+
+.car .car-go .car-total button{
+    width: 6rem;
+    height: 2.5rem;
+    border-radius: .4rem;
+    background: #5c81e3;
+    color:white;
+    border: none;
+    cursor: pointer;
+}
+/* */
+
+.header-nav ul{
+    display: flex;
+    flex-direction:row;
+    padding:2rem 0;
+    box-sizing:border-box;
+}
+.header-nav ul li a{
+    padding:5px 10px;
+}
+
+.header-fixed{
+    border-bottom: 1px solid #dadada;
+    background-image: linear-gradient(#fff,#f1f1f1);
+    position: fixed;
+    top: 0;
+    z-index: 2;
+}
+.header-fixed ul{
+    padding: 1.2rem 0;
+}

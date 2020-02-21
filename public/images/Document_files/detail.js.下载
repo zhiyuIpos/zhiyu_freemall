@@ -1,0 +1,8 @@
+var Detail={
+    template:`
+        <div>
+        <h1>这是详情{{lid}}</h1>
+        </div>
+    `,
+    props:["lid"]
+}

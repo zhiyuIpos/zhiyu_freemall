@@ -1,0 +1,163 @@
+.nav{
+    display: flex;
+}
+.nav>ul{
+    display: flex;
+    font-size: 14px;
+}
+.nav>ul>li{
+    color: #999;
+    cursor: pointer;
+    line-height: 4rem;
+    padding:0 .5rem;
+}
+.nav>ul>.active{
+    color:#5683ea;
+}
+.nav>ul>li>div>input{
+    width: 3.5rem;
+    height: 2rem;
+    border:1px solid #ccc;
+    border-radius: .2rem;
+    background: transparent;
+    text-align: center;
+}
+.nav>ul>li>div>label{
+    padding:0 .3rem;
+}
+.nav>ul>li>div>button{
+    width: 4.5rem;
+    height: 2rem;
+    border:1px solid  #678ee7;
+    border-radius: .2rem;
+    margin-left: .3rem;
+    color: white;
+    font-size: .7rem;
+    cursor: pointer;
+    background-color: #678ee7;
+    background-image: linear-gradient(180deg,#678ee7,#5078df);
+}
+.content{
+    width: 75rem;
+    margin:0 auto;
+}
+.block{
+    width: 100%;
+    display: flex;
+    border-radius: 0;
+    height: auto;
+    flex-wrap: wrap;
+}
+.block>.block-a{
+    display: inline-block;
+    width: calc(25% - 1px);
+    height: 26rem;
+    margin-bottom: 1px;
+}
+.block-item{
+    width: 100%;
+    height: 26rem;
+    background-color: #fff;
+    text-align: center;
+}
+.block-item>img{
+    width: 70%;
+    height: 15rem;
+}
+    .block .block-item h3{
+    font-size: 1rem;
+    font-weight: normal;
+    padding-bottom: 10px;
+}
+
+ .block .block-item h4{
+    font-size: .6rem;
+    font-weight: normal;
+    padding-bottom: 1.8rem;
+    color: #d0d0d0;
+}
+
+ .block .block-item>div{
+    color:#d44d44;
+    font-weight: bold;
+    width: 80%;
+    height: 40px;
+    margin:0 auto;
+    position: relative;
+}
+ .block .block-item>div>label{
+    color:#d44d44;
+}
+.block .block-item>div>.show{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    background-color: #fff;
+    top: 0;
+    display: none;
+}
+.block>.block-a:hover{
+    transform: translateY(-3px);
+    box-shadow: 1px 1px 20px 0 #999;
+    transition: all .3s linear;
+}
+
+.block>a:hover .show{
+    display: block;
+}
+
+.block .block-item .show>button{
+    display: inline-block;
+    width: 100px;
+    height: 30px;
+    border-radius: .3rem;
+    font-size: .8rem;
+    line-height: 30px;
+    text-align: center;
+    box-sizing:border-box;
+    cursor: pointer;
+}
+
+.block .block-item .show>button:first-child{
+    background: transparent;
+    color:#646464;
+    border:1px solid #e3e3e3;
+}
+
+.block .block-item .show>button:last-child{
+    background: #678ee7;
+    color:white;
+    border:1px solid #678ee7;
+}
+
+.block-limit{
+    margin:2rem 0;
+    display: flex;
+    justify-content:flex-end;
+}
+
+.block-limit>.page{
+    display: flex;
+    justify-content: space-between;
+    font-size: .8rem;
+
+}
+.block-limit>.page>button{
+    width: 1.4rem;
+    height: 1.4rem;
+    border:1px solid #678ee7;
+    line-height: 1.4rem;
+    text-align: center;
+    color: #646464;
+    cursor: pointer;
+    background: transparent;
+}
+
+.block-limit >.page>button.active{
+    border:2px solid #5683ea;
+}
+
+.block-limit >.page>button+button{
+    margin-left: 2px;
+    
+}

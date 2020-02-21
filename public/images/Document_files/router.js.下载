@@ -1,0 +1,8 @@
+var router = new VueRouter({
+    routes:[
+        {path:'/',component:Index},
+        {path:'/detail/:lid',component:Detail,props:true},
+        {path:'/product',component:Product},
+        {path:'*',component:notFound},
+    ]
+})

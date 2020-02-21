@@ -1,0 +1,7 @@
+var Product={
+    template:`
+        <div>
+        <h1>这是商品</h1>
+        </div>
+    `
+}

@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/register.css">
+</head>
+<body>
+    <div class="register">
+        <div class="logo"><img src="images/logo.png" alt=""></div>
+        <h1>欢迎访问LOGO注册官网</h1>
+        <div class="form">
+            <div class="form-data">
+                <div class="row"><input type="text" name="username" placeholder="账号"><label class="">输入1~10位以字母开头的用户名</label></div>
+                <div class="row"><input type="password" name="password" placeholder="密码"><label class="">输入6~10位的密码</label></div>
+                <div class="row"><input type="password" name="password1" placeholder="重复密码"><label class="">请再次输入密码</label></div>
+            </div>
+            <!-- <div class="row"><input type="checkbox">我已同意遵守<a href="#">法律声明</a><label class="">请勾选</label></div> -->
+            <button>注册</button>
+        </div>
+    </div>
+    <script src="js/ajax.js"></script>
+    <script>
+        let form_data = document.querySelectorAll(".form-data .row input")
+        function isTest(reg){
+            let label = this.nextElementSibling
+            return reg.test(this.value) ? label.className="success": label.className ="pass"
+        }
+        for(let i =0;i<form_data.length;i++){
+            form_data[i].onfocus=function(){
+                this.nextElementSibling.style.display = "inline-block"
+            }
+            form_data[i].onblur=function(){
+                if(this.name === 'username'){
+                    let reg = /^[a-zA-Z_$]\w{0,9}$/
+                    let method = 'get'
+                    // 如果没有值就默认为
+                    let url="/api/user/getUser/" + (this.value || '1')
+                    ajax("",method,url,function(result){
+                        let label =this.nextElementSibling
+                        if(result){
+                            label.className="pass"
+                            label.innerHTML = "用户名已存在"
+                        }else{
+                            isTest.call(this,reg)
+                        }
+                        
+                    }.bind(this)) 
+                }else if(this.name === 'password'){
+                    let reg = /^\w{6,10}$/
+                    isTest.call(this,reg)
+                    prev = this.value
+                    let password1 = document.querySelector('[name=password1]')
+                    if(password1.value){
+                        password1.focus()
+                        password1.blur()
+                    }
+                }else{
+                    // 获取前一个兄弟元素的值判断，是否一样
+                    let prev_value = prev || Math.random()
+                    let label = this.nextElementSibling
+                        if(this.value == prev_value){
+                            label.className="success"
+                        }else{
+                            label.className="pass"
+                            label.innerHTML = "两次密码不一致"
+                        }
+                }
+            }
+        }
+
+        // 点击按钮注册之后，对数据进行校验
+        let btn = document.querySelector('.form > button')
+        btn.onclick=function(){   
+            // 先获取第一个文本框的值，如果为ture就判断下一个
+            let username = document.querySelector('[name=username]')
+            if(username.nextElementSibling.className == 'success'){
+                let password = document.querySelector('[name=password]')
+                if(password.nextElementSibling.className == 'success'){
+                    let password1 = document.querySelector('[name=password1]')
+                    if(password1.nextElementSibling.className == 'success'){
+                        // 调用函数
+                        let formData=""
+                        for(var data of form_data){
+                            formData+=`${data.name}=${data.value}&`
+                        }
+                        formData=formData.slice(0,length-1)
+                        let method = 'post'
+                        let url='/api/user/register'
+                        ajax(formData,method ,url ,function(result){
+                            alert("注册成功")
+                            window.open("login.html","_self")
+                        })
+                    }else{
+                        password1.focus()
+                    }
+                }else{
+                    password.focus()
+                }
+            }else{
+                username.focus()
+            }   
+        }
+    </script>
+</body>
+</html>
